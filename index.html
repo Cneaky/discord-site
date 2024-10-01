@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Username</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My Discord</h1>
+        <div class="username-card">
+            <p class="username">cneakyy</p>
+            <button class="copy-button" onclick="copyUsername()">Click to copy</button> <!-- Copy button -->
+        </div>
+        <footer>
+            <p>&copy; 2024 Cneaky. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyUsername() {
+            const username = document.querySelector('.username').textContent; // Get the username
+            navigator.clipboard.writeText(username) // Copy to clipboard
+                .then(() => {
+                    alert('Username copied: ' + username); // Alert on success
+                })
+                .catch(err => {
+                    console.error('Failed to copy: ', err); // Log error if it occurs
+                });
+        }
+    </script>
+</body>
+</html>
